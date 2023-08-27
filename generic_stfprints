@@ -1,0 +1,32 @@
+Title: Separation, ShiTomasi_corners detection and matching of finger prints
+
+login into mysql as root...123456
+CREATE DATABASE stfprints1;
+#create user 'team1'@'localhost' identified by 'test623';
+GRANT ALL ON stfprints1.* TO 'team1'@'localhost';
+
+use stfprints1;
+
+CREATE TABLE customer
+(
+id VARCHAR(6),
+name VARCHAR(60),
+address1 VARCHAR(60),
+address2 VARCHAR(60),
+adhar VARCHAR(15),
+mobile VARCHAR(15)
+);
+
+CREATE TABLE linkage
+(
+id VARCHAR(6),
+imgfile1 VARCHAR(40),imgfile2 VARCHAR(40),imgfile3 VARCHAR(40),imgfile4 VARCHAR(40),imgfile5 VARCHAR(40),
+imgfile6 VARCHAR(40),imgfile7 VARCHAR(40),imgfile8 VARCHAR(40),imgfile9 VARCHAR(40),imgfile10 VARCHAR(40)
+);
+
+
+
+import pymysql
+con = pymysql.connect(host='localhost', port=3306, user='team1', passwd='test623', db='stfprints1')
+cur = con.cursor()
+
